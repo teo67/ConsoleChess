@@ -190,77 +190,23 @@ class Main {
     }
  
     public static void main(String[] args) {
-        map[0][0] = new Rook(1);
-        map[0][1] = new Knight(1);
-        map[0][2] = new Bishop(1);
-        map[0][3] = new Queen(1);
-        map[0][4] = new King(1);
-        map[0][5] = new Bishop(1);
-        map[0][6] = new Knight(1);
-        map[0][7] = new Rook(1);
-
-        map[1][0] = new Pawn(1);
-        map[1][1] = new Pawn(1);
-        map[1][2] = new Pawn(1);
-        map[1][3] = new Pawn(1);
-        map[1][4] = new Pawn(1);
-        map[1][5] = new Pawn(1);
-        map[1][6] = new Pawn(1);
-        map[1][7] = new Pawn(1);
-
-        map[2][0] = new Empty(0);
-        map[2][1] = new Empty(0);
-        map[2][2] = new Empty(0);
-        map[2][3] = new Empty(0);
-        map[2][4] = new Empty(0);
-        map[2][5] = new Empty(0);
-        map[2][6] = new Empty(0);
-        map[2][7] = new Empty(0);
-
-        map[3][0] = new Empty(0);
-        map[3][1] = new Empty(0);
-        map[3][2] = new Empty(0);
-        map[3][3] = new Empty(0);
-        map[3][4] = new Empty(0);
-        map[3][5] = new Empty(0);
-        map[3][6] = new Empty(0);
-        map[3][7] = new Empty(0);
-
-        map[4][0] = new Empty(0);
-        map[4][1] = new Empty(0);
-        map[4][2] = new Empty(0);
-        map[4][3] = new Empty(0);
-        map[4][4] = new Empty(0);
-        map[4][5] = new Empty(0);
-        map[4][6] = new Empty(0);
-        map[4][7] = new Empty(0);
-
-        map[5][0] = new Empty(0);
-        map[5][1] = new Empty(0);
-        map[5][2] = new Empty(0);
-        map[5][3] = new Empty(0);
-        map[5][4] = new Empty(0);
-        map[5][5] = new Empty(0);
-        map[5][6] = new Empty(0);
-        map[5][7] = new Empty(0);
-
-        map[6][0] = new Pawn(-1);
-        map[6][1] = new Pawn(-1);
-        map[6][2] = new Pawn(-1);
-        map[6][3] = new Pawn(-1);
-        map[6][4] = new Pawn(-1);
-        map[6][5] = new Pawn(-1);
-        map[6][6] = new Pawn(-1);
-        map[6][7] = new Pawn(-1);
-
-        map[7][0] = new Rook(-1);
-        map[7][1] = new Knight(-1);
-        map[7][2] = new Bishop(-1);
-        map[7][3] = new Queen(-1);
-        map[7][4] = new King(-1);
-        map[7][5] = new Bishop(-1);
-        map[7][6] = new Knight(-1);
-        map[7][7] = new Rook(-1);
+        for(int i = 0; i < 2; i++) {
+            map[7 * i][0] = new Rook(i * -2 + 1);
+            map[7 * i][1] = new Knight(i * -2 + 1);
+            map[7 * i][2] = new Bishop(i * -2 + 1);
+            map[7 * i][3] = new Queen(i * -2 + 1);
+            map[7 * i][4] = new King(i * -2 + 1);
+            map[7 * i][5] = new Bishop(i * -2 + 1);
+            map[7 * i][6] = new Knight(i * -2 + 1);
+            map[7 * i][7] = new Rook(i * -2 + 1);
+        }
+        for(int i = 0; i < 8; i++) {
+            map[1][i] = new Pawn(1);
+            for(int j = 2; j < 6; j++) {
+                map[j][i] = new Empty(0);
+            }
+            map[6][i] = new Pawn(-1);
+        }
 
         System.out.println("\n" + returnBoard());
         System.out.println("\n\nWelcome to Chess! Player 1 [white], it's your turn to go first! Here's an example move: e2-e4.");

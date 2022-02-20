@@ -1,5 +1,5 @@
 <h1>A simple chess game to run in terminal!</h1>
-
+<p>Note: This personal project is not set up with a build system. This is because it was initially written on Repl.it using repl's built in compiler.</p>
 <h2><strong>To run:<strong></h2>
 <ul>
     <li>Install VSCode Extension Pack for Java</li>
